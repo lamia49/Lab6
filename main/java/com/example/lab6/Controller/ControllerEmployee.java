@@ -43,15 +43,9 @@ public class ControllerEmployee {
     }
 
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity delete(@PathVariable String id) {
-        for (Employee employee : employees) {
-            if (employee.getId().equalsIgnoreCase(id)) {
-                employees.remove(employee);
-            } else
-                return ResponseEntity.status(400).body("Not Found");
-        }
-
+    @DeleteMapping("/delete/{index}")
+    public ResponseEntity delete(@PathVariable int index) {
+                employees.remove(index);
         return ResponseEntity.status(200).body("Deleted");
     }
 
