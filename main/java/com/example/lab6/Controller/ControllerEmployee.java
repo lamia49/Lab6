@@ -107,7 +107,7 @@ public class ControllerEmployee {
         return employess;
     }
 
-    @PutMapping("/promote/{id1},{id2}")
+    @PutMapping("/promote/{id1}/{id2}")
 
     public ResponseEntity Promote(@PathVariable String id1, @PathVariable String id_2) {
         for (Employee employee1 : employees) {
